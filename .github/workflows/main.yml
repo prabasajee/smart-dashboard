@@ -106,41 +106,6 @@ jobs:
         echo "Running basic performance checks..."
         curl -f http://localhost:3000 && echo "✅ Server responding" || echo "❌ Server not responding"
 
-  # Job 4: Deploy to GitHub Pages
-  deploy:
-    runs-on: ubuntu-latest
-    name: Deploy to GitHub Pages
-    needs: [build-and-test, performance-test]
-    if: github.ref == 'refs/heads/main'
-    
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-      
-    - name: Build project
-      run: |
-        echo "Building project..."
-        mkdir -p _site
-        cp -r * _site/ 2>/dev/null || true
-        rm -rf _site/.git _site/.github _site/node_modules 2>/dev/null || true
-        
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: '_site'
-        
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
-
   # Job 5: Post-deployment notifications
   notify:
     runs-on: ubuntu-latest
