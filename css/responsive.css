@@ -1,0 +1,314 @@
+/**
+ * Responsive design styles for Smart Dashboard
+ * Mobile-first approach with breakpoints
+ * Developer 2 (Your Friend) - Responsive Design
+ */
+
+/* Mobile First Base Styles (already in style.css) */
+
+/* Additional responsive styles for components */
+
+/* Mobile Styles (320px - 768px) */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: var(--spacing-md);
+    }
+    
+    .dashboard-header {
+        margin-bottom: var(--spacing-lg);
+        padding: var(--spacing-md) 0;
+    }
+    
+    .dashboard-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-base);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .dashboard-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .card-header h2 {
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Clock Card Mobile */
+    .clock-card .time {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .clock-card .date {
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Weather Card Mobile */
+    .weather-info {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .weather-icon {
+        font-size: 2.5rem;
+    }
+    
+    .temperature {
+        font-size: var(--font-size-2xl);
+    }
+    
+    /* Todo Card Mobile */
+    .todo-input-container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .todo-input-container input {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .todo-input-container button {
+        width: 100%;
+        padding: var(--spacing-md);
+    }
+    
+    /* Quote Card Mobile */
+    .quote-text {
+        font-size: var(--font-size-base);
+    }
+    
+    .refresh-quote {
+        width: 100%;
+        margin-top: var(--spacing-md);
+    }
+}
+
+/* Tablet Styles (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .dashboard-container {
+        padding: var(--spacing-lg);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    .dashboard-card {
+        padding: var(--spacing-xl);
+    }
+    
+    /* Make quote card span full width on tablet */
+    .quote-card {
+        grid-column: 1 / -1;
+    }
+    
+    /* Weather info horizontal layout */
+    .weather-info {
+        flex-direction: row;
+        gap: var(--spacing-lg);
+    }
+    
+    .weather-icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+    .dashboard-container {
+        padding: var(--spacing-xl);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xl);
+    }
+    
+    /* Clock card spans 2 columns on large screens */
+    .clock-card {
+        grid-column: 1 / 3;
+    }
+    
+    /* Weather card takes 1 column */
+    .weather-card {
+        grid-column: 3 / 4;
+    }
+    
+    /* Todo card spans 2 columns */
+    .todo-card {
+        grid-column: 1 / 3;
+    }
+    
+    /* Quote card takes 1 column */
+    .quote-card {
+        grid-column: 3 / 4;
+    }
+}
+
+/* Large Desktop Styles (1440px and up) */
+@media (min-width: 1440px) {
+    .dashboard-container {
+        max-width: 1400px;
+        padding: var(--spacing-2xl);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-2xl);
+    }
+    
+    /* Reset grid columns for larger screens */
+    .clock-card {
+        grid-column: 1 / 2;
+    }
+    
+    .weather-card {
+        grid-column: 2 / 3;
+    }
+    
+    .todo-card {
+        grid-column: 3 / 4;
+    }
+    
+    .quote-card {
+        grid-column: 4 / 5;
+    }
+}
+
+/* Landscape Phone Styles */
+@media (max-width: 768px) and (orientation: landscape) {
+    .dashboard-header {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .dashboard-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dashboard-card {
+        padding: var(--spacing-md);
+    }
+    
+    .clock-card .time {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .dashboard-container {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .dashboard-header {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .theme-toggle {
+        display: none;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    .dashboard-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .refresh-quote {
+        display: none;
+    }
+    
+    .todo-input-container {
+        display: none;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .dashboard-card:hover {
+        transform: none;
+    }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Enhanced styles for high DPI displays */
+    .dashboard-card {
+        border-width: 0.5px;
+    }
+    
+    .card-header {
+        border-bottom-width: 1px;
+    }
+}
+
+/* Container Queries (Future Enhancement) */
+@supports (container-type: inline-size) {
+    .dashboard-card {
+        container-type: inline-size;
+    }
+    
+    @container (max-width: 300px) {
+        .card-header {
+            flex-direction: column;
+            text-align: center;
+            gap: var(--spacing-xs);
+        }
+        
+        .weather-info {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}
+
+/* Focus Visible for Better Keyboard Navigation */
+@supports selector(:focus-visible) {
+    button:focus:not(:focus-visible) {
+        outline: none;
+    }
+    
+    button:focus-visible {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+    }
+}
+
+/* Dark Mode Media Query Override */
+@media (prefers-color-scheme: dark) {
+    @media (max-width: 768px) {
+        .dashboard-header {
+            background: rgba(45, 55, 72, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+    }
+}

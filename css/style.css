@@ -174,7 +174,8 @@ body {
 }
 
 .card-content {
-    /* Content styling will be added by specific components */
+    /* Base content styles */
+    position: relative;
 }
 
 /* Clock Card Styles */
@@ -251,7 +252,316 @@ body {
 }
 
 /* TODO: Add To-Do List styles here (Developer 2 task) */
+/* To-Do List Card Styles */
+.todo-input-container {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.todo-input-container input {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: var(--transition-fast);
+}
+
+.todo-input-container input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.todo-input-container input::placeholder {
+    color: var(--text-muted);
+}
+
+.todo-input-container button {
+    padding: var(--spacing-md);
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+}
+
+.todo-input-container button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.todo-input-container button:active {
+    transform: translateY(0);
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--border-light);
+    transition: var(--transition-fast);
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-item:hover {
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: var(--radius-sm);
+}
+
+.todo-item.completed {
+    opacity: 0.6;
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.todo-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+}
+
+.todo-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+}
+
+.todo-toggle:hover {
+    color: var(--primary-color);
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.todo-item.completed .todo-toggle {
+    color: var(--success);
+}
+
+.todo-text {
+    flex: 1;
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+}
+
+.todo-text:hover {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.todo-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    opacity: 0;
+}
+
+.todo-item:hover .todo-delete {
+    opacity: 1;
+}
+
+.todo-delete:hover {
+    color: var(--error);
+    background: rgba(245, 101, 101, 0.1);
+}
+
+.todo-edit-input {
+    flex: 1;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-base);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.todo-edit-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.todo-empty {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    color: var(--text-muted);
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.empty-state i {
+    font-size: var(--font-size-3xl);
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.empty-state p {
+    font-size: var(--font-size-base);
+    margin: 0;
+}
+
 /* TODO: Add Quote card styles here (Developer 2 task) */
+/* Quote Card Styles */
+.quote-container {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    transition: var(--transition-normal);
+}
+
+.quote-text {
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    font-weight: 500;
+    position: relative;
+}
+
+.quote-text::before,
+.quote-text::after {
+    content: '"';
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.quote-text::before {
+    margin-right: var(--spacing-xs);
+}
+
+.quote-text::after {
+    margin-left: var(--spacing-xs);
+}
+
+.quote-author {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-style: normal;
+    display: block;
+    margin-top: var(--spacing-sm);
+}
+
+.refresh-quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.refresh-quote:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.refresh-quote:active {
+    transform: translateY(0);
+}
+
+.refresh-quote:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.refresh-quote:disabled:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-light);
+}
+
+.refresh-quote i {
+    font-size: var(--font-size-base);
+    transition: var(--transition-fast);
+}
+
+.refresh-quote:hover i {
+    transform: rotate(180deg);
+}
+
+.refresh-quote i.fa-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Quote loading animation */
+.quote-container.loading {
+    opacity: 0.7;
+}
+
+.quote-container.loading .quote-text {
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Quote card hover effect */
+.quote-card:hover .quote-container {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
 
 /* Footer Styles */
 .dashboard-footer {
