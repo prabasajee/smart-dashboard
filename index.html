@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Dashboard - Your Personal Homepage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header with Theme Toggle -->
+        <header class="dashboard-header">
+            <h1 class="dashboard-title">
+                <i class="fas fa-tachometer-alt"></i>
+                Smart Dashboard
+            </h1>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-sun"></i>
+            </button>
+        </header>
+
+        <!-- Main Dashboard Grid -->
+        <main class="dashboard-grid">
+            <!-- Clock and Date Card -->
+            <div class="dashboard-card clock-card">
+                <div class="card-header">
+                    <i class="fas fa-clock"></i>
+                    <h2>Time & Date</h2>
+                </div>
+                <div class="card-content">
+                    <div class="time-display" id="timeDisplay">
+                        <span class="time">00:00:00</span>
+                        <span class="period">AM</span>
+                    </div>
+                    <div class="date-display" id="dateDisplay">
+                        <span class="date">January 1, 2025</span>
+                        <span class="day">Monday</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Card -->
+            <div class="dashboard-card weather-card">
+                <div class="card-header">
+                    <i class="fas fa-cloud-sun"></i>
+                    <h2>Weather</h2>
+                </div>
+                <div class="card-content">
+                    <div class="weather-info" id="weatherInfo">
+                        <div class="weather-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="weather-details">
+                            <div class="temperature">--°C</div>
+                            <div class="condition">Loading...</div>
+                            <div class="location">Getting location...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- To-Do List Card -->
+            <div class="dashboard-card todo-card">
+                <div class="card-header">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>To-Do List</h2>
+                </div>
+                <div class="card-content">
+                    <div class="todo-input-container">
+                        <input type="text" id="todoInput" placeholder="Add a new task...">
+                        <button id="addTodoBtn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <ul class="todo-list" id="todoList">
+                        <!-- Todo items will be dynamically added here -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quote Card -->
+            <div class="dashboard-card quote-card">
+                <div class="card-header">
+                    <i class="fas fa-quote-left"></i>
+                    <h2>Daily Inspiration</h2>
+                </div>
+                <div class="card-content">
+                    <div class="quote-container" id="quoteContainer">
+                        <blockquote class="quote-text">
+                            "Loading inspirational quote..."
+                        </blockquote>
+                        <cite class="quote-author">- Anonymous</cite>
+                    </div>
+                    <button class="refresh-quote" id="refreshQuote">
+                        <i class="fas fa-sync-alt"></i>
+                        New Quote
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>&copy; 2025 Smart Dashboard. Built with ❤️ by You & Your Friend</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="js/main.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+/**
+ * Theme styles for Smart Dashboard
+ * Contains CSS variables for light and dark themes
+ * Developer 2 (Your Friend) - Theme System
+ */
+
+/* Light Theme (Default) */
+.light-theme {
+    /* Primary Colors */
+    --primary-color: #667eea;
+    --primary-light: #764ba2;
+    --primary-dark: #4c63d2;
+    
+    /* Background Colors */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e2e8f0;
+    --bg-card: #ffffff;
+    
+    /* Text Colors */
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --text-inverse: #ffffff;
+    
+    /* Border Colors */
+    --border-light: #e2e8f0;
+    --border-medium: #cbd5e0;
+    --border-dark: #a0aec0;
+    
+    /* Shadow */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+    
+    /* Interactive Colors */
+    --success: #48bb78;
+    --warning: #ed8936;
+    --error: #f56565;
+    --info: #4299e1;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    --gradient-secondary: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Dark Theme */
+.dark-theme {
+    /* Primary Colors */
+    --primary-color: #7c3aed;
+    --primary-light: #8b5cf6;
+    --primary-dark: #6d28d9;
+    
+    /* Background Colors */
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --bg-tertiary: #4a5568;
+    --bg-card: #2d3748;
+    
+    /* Text Colors */
+    --text-primary: #f7fafc;
+    --text-secondary: #e2e8f0;
+    --text-muted: #a0aec0;
+    --text-inverse: #1a202c;
+    
+    /* Border Colors */
+    --border-light: #4a5568;
+    --border-medium: #718096;
+    --border-dark: #a0aec0;
+    
+    /* Shadow */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.3);
+    
+    /* Interactive Colors */
+    --success: #68d391;
+    --warning: #fbb747;
+    --error: #fc8181;
+    --info: #63b3ed;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    --gradient-secondary: linear-gradient(135deg, #7c3aed, #8b5cf6);
+}
+
+/* Theme Transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark Theme Specific Styles */
+.dark-theme body {
+    background: linear-gradient(135deg, #1a202c, #2d3748);
+    color: var(--text-primary);
+}
+
+.dark-theme .dashboard-card {
+    background: var(--bg-card);
+    border-color: var(--border-light);
+}
+
+.dark-theme .dashboard-card:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+.dark-theme .theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Card Header Dark Theme */
+.dark-theme .card-header {
+    border-bottom-color: var(--border-light);
+}
+
+.dark-theme .card-header h2 {
+    color: var(--text-primary);
+}
+
+/* Clock Card Dark Theme */
+.dark-theme .clock-card .time {
+    color: var(--primary-color);
+}
+
+.dark-theme .clock-card .date {
+    color: var(--text-primary);
+}
+
+.dark-theme .clock-card .period,
+.dark-theme .clock-card .day {
+    color: var(--text-secondary);
+}
+
+/* Weather Card Dark Theme */
+.dark-theme .weather-icon {
+    color: var(--primary-color);
+}
+
+.dark-theme .temperature {
+    color: var(--primary-color);
+}
+
+.dark-theme .condition {
+    color: var(--text-primary);
+}
+
+.dark-theme .location {
+    color: var(--text-secondary);
+}
+
+/* Todo Card Dark Theme */
+.dark-theme .todo-input-container input {
+    background: var(--bg-tertiary);
+    border-color: var(--border-light);
+    color: var(--text-primary);
+}
+
+.dark-theme .todo-input-container input::placeholder {
+    color: var(--text-muted);
+}
+
+.dark-theme .todo-input-container button {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+}
+
+.dark-theme .todo-item {
+    border-bottom-color: var(--border-light);
+}
+
+.dark-theme .todo-item.completed .todo-text {
+    color: var(--text-muted);
+}
+
+.dark-theme .todo-text {
+    color: var(--text-primary);
+}
+
+.dark-theme .todo-toggle {
+    color: var(--text-secondary);
+}
+
+.dark-theme .todo-toggle:hover {
+    color: var(--primary-color);
+}
+
+.dark-theme .todo-delete {
+    color: var(--text-muted);
+}
+
+.dark-theme .todo-delete:hover {
+    color: var(--error);
+}
+
+.dark-theme .todo-edit-input {
+    background: var(--bg-tertiary);
+    border-color: var(--border-light);
+    color: var(--text-primary);
+}
+
+.dark-theme .todo-empty {
+    color: var(--text-muted);
+}
+
+/* Quote Card Dark Theme */
+.dark-theme .quote-text {
+    color: var(--text-primary);
+}
+
+.dark-theme .quote-author {
+    color: var(--text-secondary);
+}
+
+.dark-theme .refresh-quote {
+    background: var(--bg-tertiary);
+    border-color: var(--border-light);
+    color: var(--text-primary);
+}
+
+.dark-theme .refresh-quote:hover {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+}
+
+/* Footer Dark Theme */
+.dark-theme .dashboard-footer {
+    color: var(--text-muted);
+}
+
+/* Scrollbar Dark Theme */
+.dark-theme ::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 4px;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+/* Selection Dark Theme */
+.dark-theme ::selection {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+}
+
+/* Focus Styles Dark Theme */
+.dark-theme button:focus,
+.dark-theme input:focus,
+.dark-theme textarea:focus {
+    outline-color: var(--primary-color);
+}
+
+/* Loading Animation Dark Theme */
+.dark-theme .loading::after {
+    border-color: var(--primary-color);
+    border-top-color: transparent;
+}
+
+/* Media Queries for Theme Preferences */
+@media (prefers-color-scheme: dark) {
+    /* Auto dark theme styles if no theme is set */
+    :root:not(.light-theme):not(.dark-theme) {
+        --primary-color: #7c3aed;
+        --primary-light: #8b5cf6;
+        --primary-dark: #6d28d9;
+        --bg-primary: #1a202c;
+        --bg-secondary: #2d3748;
+        --bg-tertiary: #4a5568;
+        --bg-card: #2d3748;
+        --text-primary: #f7fafc;
+        --text-secondary: #e2e8f0;
+        --text-muted: #a0aec0;
+        --text-inverse: #1a202c;
+        --border-light: #4a5568;
+        --border-medium: #718096;
+        --border-dark: #a0aec0;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+        --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.3);
+        --success: #68d391;
+        --warning: #fbb747;
+        --error: #fc8181;
+        --info: #63b3ed;
+        --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        --gradient-secondary: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .light-theme {
+        --border-light: #000000;
+        --text-secondary: #000000;
+    }
+    
+    .dark-theme {
+        --border-light: #ffffff;
+        --text-secondary: #ffffff;
+    }
+}
