@@ -106,8 +106,6 @@ jobs:
         echo "Running basic performance checks..."
         curl -f http://localhost:3000 && echo "✅ Server responding" || echo "❌ Server not responding"
 
-
-
   # Job 5: Post-deployment notifications
   notify:
     runs-on: ubuntu-latest
