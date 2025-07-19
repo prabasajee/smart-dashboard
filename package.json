@@ -8,12 +8,17 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "lint": "eslint **/*.js",
-    "lint:fix": "eslint **/*.js --fix",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint:js": "eslint **/*.js",
+    "lint:css": "stylelint **/*.css",
+    "lint:html": "htmlhint **/*.html",
+    "lint:fix": "eslint **/*.js --fix && prettier --write **/*.{html,css,js,json,md}",
     "format": "prettier --write **/*.{html,css,js,json,md}",
     "format:check": "prettier --check **/*.{html,css,js,json,md}",
-    "build": "echo 'Building project...'",
-    "lighthouse": "lhci autorun"
+    "build": "node scripts/build.js",
+    "lighthouse": "lhci autorun",
+    "audit": "npm audit",
+    "audit:fix": "npm audit fix"
   },
   "keywords": [
     "dashboard",
